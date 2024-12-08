@@ -5,12 +5,17 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   update-badge:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Read version
         id: get_version
@@ -20,11 +25,11 @@ jobs:
         run: |
           VERSION=${{ env.VERSION }}
           curl -o version-badge.svg "https://img.shields.io/badge/Version-${VERSION}-blue.svg"
+
       - name: Commit and push badge
         run: |
           git config user.name "GitHub Actions"
-          git config user.email "rahulkumar.aws@gmail.com"
+          git config user.email "actions@github.com"
           git add version-badge.svg
           git commit -m "Update version badge to ${{ env.VERSION }}"
-          git push
-
+          git push origin main
