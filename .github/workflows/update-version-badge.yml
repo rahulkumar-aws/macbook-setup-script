@@ -1,0 +1,30 @@
+name: Update Version Badge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-badge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Read version
+        id: get_version
+        run: echo "VERSION=$(cat VERSION)" >> $GITHUB_ENV
+
+      - name: Update version badge
+        run: |
+          VERSION=${{ env.VERSION }}
+          curl -o version-badge.svg "https://img.shields.io/badge/Version-${VERSION}-blue.svg"
+      - name: Commit and push badge
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "rahulkumar.aws@gmail.com"
+          git add version-badge.svg
+          git commit -m "Update version badge to ${{ env.VERSION }}"
+          git push
+

@@ -2,6 +2,18 @@
 
 This script automates the setup of a macOS environment for software development. It installs essential tools, programming languages, databases, and utilities, configures Zsh with the Powerlevel10k theme, and ensures compatibility with Nerd Fonts for a visually appealing terminal experience.
 
+![Project Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)
+![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)
+![Version](./version-badge.svg)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Bash Script](https://img.shields.io/badge/Bash-Script-blue.svg?logo=gnu-bash&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.9-blue.svg)
+## 🐚 Bash Script
+
+This project includes a setup script written in **Bash** to automate the macOS developer setup process.
+
+This project is a macOS setup automation script designed to simplify the developer onboarding process.
+
 ---
 
 ## Features
@@ -95,12 +107,15 @@ Feel free to modify the script to include additional tools or configurations. Fo
 
 ## License
 
-This script is open-source and distributed under the [MIT License](LICENSE).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute this software in accordance with the terms specified in the license.
+
 
 ---
 
 ## Author
 
-[Rahul Kumar]  
-[rahulkumar.aws@gmail.com]  
+Rahul Kumar
+rahulkumar.aws@gmail.com
 [Your Website or GitHub Profile](https://github.com/rahulkumar-aws)
